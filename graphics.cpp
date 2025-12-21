@@ -200,6 +200,42 @@ void draw_pause_menu()
     };
     draw_text(paused_title);
 }
+void draw_game_over_menu()
+{
+    ClearBackground(BLACK);
+
+    DrawRectangleV({ 0.0f, 0.0f }, { screen_size.x, screen_size.y }, { 0, 0, 0, 120 });
+
+    const Text title = {
+        "Game Over",
+        { 0.50f, 0.46f },
+        120.0f,
+        RED,
+        4.0f,
+        &menu_font
+    };
+    draw_text(title);
+
+    const Text subtitle = {
+        "Press R to Retry",
+        { 0.50f, 0.60f },
+        32.0f,
+        WHITE,
+        4.0f,
+        &menu_font
+    };
+    draw_text(subtitle);
+
+    const Text to_menu = {
+        "Press Enter for Menu",
+        { 0.50f, 0.67f },
+        32.0f,
+        WHITE,
+        4.0f,
+        &menu_font
+    };
+    draw_text(to_menu);
+}
 
 void init_victory_menu()
 {
@@ -257,4 +293,35 @@ void draw_victory_menu()
         &menu_font
     };
     draw_text(victory_subtitle);
+}
+
+void draw_dead_end_menu()
+{
+    animate_victory_menu();
+
+    DrawRectangleV({ 0.0f, 0.0f }, { screen_size.x, screen_size.y }, { 0, 0, 0, 50 });
+
+    for (const auto& [x, y] : victory_balls_pos) {
+        DrawCircleV({ x, y }, victory_balls_size, WHITE);
+    }
+
+    const Text dead_end_title = {
+        "Dead End!",
+        { 0.50f, 0.50f },
+        100.0f,
+        RED,
+        4.0f,
+        &menu_font
+    };
+    draw_text(dead_end_title);
+
+    const Text dead_end_subtitle = {
+        "Press Enter to Restart",
+        { 0.50f, 0.65f },
+        32.0f,
+        WHITE,
+        4.0f,
+        &menu_font
+    };
+    draw_text(dead_end_subtitle);
 }

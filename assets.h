@@ -5,17 +5,15 @@
 
 #include "sprite.h"
 
-inline Font menu_font;
 
-inline Texture2D wall_texture;
-inline Texture2D void_texture;
-inline Texture2D paddle_texture;
-inline Texture2D block_texture;
-
-inline sprite ball_sprite;
-
-inline Sound win_sound;
-inline Sound lose_sound;
+extern Font menu_font;
+extern Texture2D wall_texture;
+extern Texture2D void_texture;
+extern Texture2D paddle_texture;
+extern Texture2D block_texture;
+extern sprite ball_sprite;
+extern Sound win_sound;
+extern Sound lose_sound;
 
 void load_fonts();
 void unload_fonts();

@@ -2,6 +2,18 @@
 
 #include "raylib.h"
 
+Font menu_font{};
+
+Texture2D wall_texture{};
+Texture2D void_texture{};
+Texture2D paddle_texture{};
+Texture2D block_texture{};
+
+sprite ball_sprite{};
+
+Sound win_sound{};
+Sound lose_sound{};
+
 void load_fonts()
 {
     menu_font = LoadFontEx("data/fonts/ARCADECLASSIC.TTF", 256, nullptr, 0);
