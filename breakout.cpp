@@ -10,7 +10,8 @@ void update()
 {
     switch (game_state) {
     case menu_state:
-        if (IsKeyPressed(KEY_ENTER)) game_state = in_game_state;
+        if (IsKeyPressed(KEY_ENTER))
+            game_state = in_game_state;
         break;
     case in_game_state:
         if (IsKeyPressed(KEY_SPACE)) {
@@ -23,7 +24,7 @@ void update()
             move_paddle(paddle_speed);
         }
         move_ball();
-        if ( !is_ball_inside_level()) {
+        if (!is_ball_inside_level()) {
             load_level();
             PlaySound(lose_sound);
         } else if (current_level_blocks == 0) {
@@ -74,7 +75,6 @@ int main()
     load_textures();
     load_level();
     load_sounds();
-
 
     while (!WindowShouldClose()) {
         BeginDrawing();
