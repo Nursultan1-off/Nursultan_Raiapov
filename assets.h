@@ -5,12 +5,14 @@
 
 #include "sprite.h"
 
-
+#include "sprite.h"
 extern Font menu_font;
+
 extern Texture2D wall_texture;
 extern Texture2D void_texture;
 extern Texture2D paddle_texture;
 extern Texture2D block_texture;
+
 extern sprite ball_sprite;
 extern Sound win_sound;
 extern Sound lose_sound;
