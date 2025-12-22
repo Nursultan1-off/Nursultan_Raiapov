@@ -19,8 +19,8 @@ enum game_state {
     menu_state,
     in_game_state,
     paused_state,
-    dead_end_state,
-    victory_state
+    victory_state,
+    game_over_state
 };
 
 

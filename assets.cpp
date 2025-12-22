@@ -2,18 +2,6 @@
 
 #include "raylib.h"
 
-Font menu_font{};
-
-Texture2D wall_texture{};
-Texture2D void_texture{};
-Texture2D paddle_texture{};
-Texture2D block_texture{};
-
-sprite ball_sprite{};
-
-Sound win_sound{};
-Sound lose_sound{};
-
 void load_fonts()
 {
     menu_font = LoadFontEx("data/fonts/ARCADECLASSIC.TTF", 256, nullptr, 0);
@@ -47,11 +35,19 @@ void load_sounds()
     InitAudioDevice();
     win_sound = LoadSound("data/sounds/win.wav");
     lose_sound = LoadSound("data/sounds/lose.wav");
+    block_hit_sound = LoadSound("data/sounds/block_hit_sound.wav");
+    border_hit_sound = LoadSound("data/sounds/border_hit_sound.wav");
+    paddle_hit_sound = LoadSound("data/sounds/paddle_hit_sound.wav");
+    victory_music = LoadMusicStream("data/music/victory_music.ogg");
+    SetMusicVolume(victory_music, 0.5f);
 }
 
 void unload_sounds()
 {
     UnloadSound(win_sound);
     UnloadSound(lose_sound);
+    UnloadSound(block_hit_sound);
+    UnloadSound(border_hit_sound);
+    UnloadMusicStream(victory_music);
     CloseAudioDevice();
 }

@@ -5,17 +5,22 @@
 
 #include "sprite.h"
 
-#include "sprite.h"
-extern Font menu_font;
+inline Font menu_font;
 
-extern Texture2D wall_texture;
-extern Texture2D void_texture;
-extern Texture2D paddle_texture;
-extern Texture2D block_texture;
+inline Texture2D wall_texture;
+inline Texture2D void_texture;
+inline Texture2D paddle_texture;
+inline Texture2D block_texture;
 
-extern sprite ball_sprite;
-extern Sound win_sound;
-extern Sound lose_sound;
+inline sprite ball_sprite;
+
+inline Sound win_sound;
+inline Sound lose_sound;
+inline Sound block_hit_sound;
+inline Sound border_hit_sound;
+inline Sound paddle_hit_sound;
+
+inline Music victory_music;
 
 void load_fonts();
 void unload_fonts();

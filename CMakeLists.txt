@@ -12,7 +12,7 @@ elseif(UNIX)
 endif()
 
 add_executable(
-    breakout
+        breakout
         breakout.cpp
         game.h
         sprite.h
